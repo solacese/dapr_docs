@@ -15,7 +15,7 @@ jobs:
     env: 
       PYTHON_VER: 3.7
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
       - name: Check Microsoft URLs do not pin localized versions
         run: |
           localized=$(find . -name '*.md' | xargs grep -ol "\.microsoft\.com/[[:alpha:]]\{2\}-[[:alpha:]]\{2\}/") || true
@@ -27,7 +27,7 @@ jobs:
             exit 1
           fi
       - name: Set up Python ${{ env.PYTHON_VER }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@e9aba2c848f5ebd159c070c61ea2c4e2b122355e # v2
         with:
           python-version: ${{ env.PYTHON_VER }}
       - name: Install dependencies
